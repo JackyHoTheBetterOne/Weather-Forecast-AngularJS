@@ -1,0 +1,22 @@
+<p>
+  <a href="#/">Back to Search</a>
+</p>
+
+Forecast for {{ city }}
+<hr/>
+Days:
+<span ng-repeat="day in day_options">
+  <a href="#/forecast/{{day}}" ng-class="{'bg-primary': days === day}" >{{day}}</a> |
+</span>
+<hr/>
+<div ng-repeat = "w in weatherResult.list">
+  <div class="row">
+    <div class="col-md-12">
+      <weather-report weather-day="w"
+        convert-to-standard="convertToFahrenheit(temp)"
+        convert-to-date="convertToDate(date)"
+        date-format = "MMM d, y">
+      </weather-report>
+    </div>
+  </div>
+</div>
